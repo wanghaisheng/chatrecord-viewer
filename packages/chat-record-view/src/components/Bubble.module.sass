@@ -6,8 +6,8 @@
   margin: 4px
   padding: 4px 10px
   font-size: medium
-  background-color: #F3F3F3
-  color: #303133
+  background-color: var(--tg-theme-secondary-bg-color)
+  color: var(--tg-theme-text-color)
 
   &.senderName
     position: sticky
@@ -15,11 +15,10 @@
     top: 0
     border-radius: 10px
     min-width: unset
-    background-color: rgba(255, 255, 255, 0.80)
+    background-color: color-mix(in srgb, var(--tg-theme-bg-color) 80%, transparent)
     backdrop-filter: blur(10px)
     font-size: small
     font-weight: bold
-    color: #D75E92
 
 
   &:nth-child(2)
@@ -29,7 +28,7 @@
   .time
     margin-top: 2px
     text-align: right
-    color: #909399
+    color: var(--tg-theme-subtitle-text-color)
     font-size: smaller
 
 
