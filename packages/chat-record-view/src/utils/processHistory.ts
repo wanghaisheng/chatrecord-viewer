@@ -28,9 +28,11 @@ export default function processHistory(history: ForwardMessage[] | TelegramMessa
     }
     let senderId = 0 as number | string, username = '', avatar = ''
     if ('user_id' in current) {
-      senderId = current.user_id
+      // @ts-ignore
+      senderId = current.user_id === 1094950020 ? current.avatar || current.nickname : current.user_id
       username = current.nickname
-      avatar = `https://q1.qlogo.cn/g?b=qq&nk=${senderId}&s=140`
+      // @ts-ignore
+      avatar = current.avatar || `https://q1.qlogo.cn/g?b=qq&nk=${senderId}&s=140`
     }
     else if (current.forward_from) {
       senderId = current.forward_from.id
